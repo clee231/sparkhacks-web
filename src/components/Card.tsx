@@ -1,13 +1,26 @@
 import './Card.css'
+import Card from 'react-bootstrap/Card';
 
-function Card() {
-  // JSX - Javascript XML: https://babeljs.io/repl
-  const name = '';
-  if (name) {
-    return <h1>Hello {name}</h1>;
-  } else {
-    return <h1>Hello World</h1>;
-  }
+interface Props {
+  name: string;
+  image: string;
 }
 
-export default Card;
+function CardComponent({name, image}: Props) {
+  
+
+  return (
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={image} />
+      <Card.Body>
+        <Card.Title>{name}</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+      </Card.Body>
+    </Card>
+  );
+}
+
+export default CardComponent;
