@@ -1,4 +1,4 @@
-import CardComponent from './components/Card';
+import CardDisplay from './components/CardDisplay';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
@@ -15,7 +15,7 @@ function App() {
         console.log(`I should be searching for '${pokeSearch}'`);
         // Get data from the API.
         const data = await (await fetch(`https://pokeapi.co/api/v2/pokemon/${pokeSearch.toLowerCase()}`)).json()
-        // Update the CardComponent.
+        // Update the CardDisplay.
         setCardData({name: pokeSearch, image: data.sprites.front_default});
       } catch (e) {
         alert("Pokemon not found!");
@@ -42,7 +42,7 @@ function App() {
                 Get Card
               </Button>
             </InputGroup>
-          <CardComponent name={cardData.name} image={cardData.image} />
+          <CardDisplay name={cardData.name} image={cardData.image} />
         </div>;
 }
 

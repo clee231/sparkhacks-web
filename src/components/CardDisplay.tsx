@@ -1,4 +1,4 @@
-import './Card.css'
+import './CardDisplay.css'
 import Card from 'react-bootstrap/Card';
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   image: string;
 }
 
-function CardComponent({name, image}: Props) {
+function CardDisplay({name, image}: Props) {
   
 
   return (
@@ -23,4 +23,4 @@ function CardComponent({name, image}: Props) {
   );
 }
 
-export default CardComponent;
+export default CardDisplay;
